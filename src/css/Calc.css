@@ -1,0 +1,67 @@
+.calculator {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 25%;
+  padding: 10px;
+  -webkit-box-shadow: 1px 1px 4px 0 rgba(176, 176, 176, 1);
+  -moz-box-shadow: 1px 1px 4px 0 rgba(176, 176, 176, 1);
+  box-shadow: 1px 1px 4px 0 rgba(176, 176, 176, 1);
+  background-color: #fff;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.heading {
+  font-size: 16px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.result-screen {
+  font-size: 28px;
+  padding: 20px 10px;
+  font-weight: 700;
+  text-align: right;
+  width: 93%;
+  border: none;
+  background-color: rgb(174, 169, 169);
+  margin-bottom: 20px;
+}
+
+.row {
+  display: inline-block;
+  width: 100%;
+}
+
+button {
+  padding: 15px;
+  font-weight: bold;
+  font-size: 16px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  background-color: #f2f2f2;
+  float: left;
+  width: 23.5%;
+  margin: 0 2px;
+  cursor: pointer;
+}
+
+button:active {
+  box-shadow: 4px 7px 22px -9px rgba(69, 66, 69, 1);
+  transform: translateY(1px);
+}
+
+.row button:last-of-type {
+  background-color: orange;
+}
+
+.row:last-of-type button:first-of-type {
+  width: 48%;
+}
