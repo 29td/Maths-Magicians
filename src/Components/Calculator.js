@@ -3,20 +3,33 @@ import calculate from './logic/calculator';
 import Row from './RowCalcul';
 import '../css/Calc.css';
 
-const Calculator = () => {
-  const [dataObj, setDataObj] = useState({
-    total: null,
-    next: null,
-    operation: null,
-  });
+class Calculator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dataObj: {
+        total: null,
+        next: null,
+        operation: null,
+      },
+    };
+    this.updateDataObj = this.updateDataObj.bind(this);
+  }
 
-  function updateDataObj(event)  {
-      const value = event.target.textContent
-      setDataObj((prevDataObj) => calculate(prevDataObj, value));
-  };
+  componentDidUpdate() {
+    this.updateScreen();
+  }
 
-  function updateScreen() {
+  updateDataObj(event) {
+    const val = event.target.textContent;
+    this.setState((prevState) => ({
+      dataObj: { ...calculate(prevState.dataObj, val) },
+    }));
+  }
+
+  updateScreen() {
     const screen = document.querySelector('.result-screen');
+    const { dataObj } = this.state;
     if (dataObj.next && !dataObj.total) {
       screen.value = dataObj.next;
     } else if (!dataObj.next && dataObj.total) {
@@ -35,52 +48,50 @@ const Calculator = () => {
     }
   }
 
-  useEffect(() => {
-    updateScreen();
-  }, [dataObj]);
-
-  return (
-    <div className="calculator">
-      <h1 className="heading">Calculator( )</h1>
-      <input type="text" className="result-screen" value={0} readOnly />
-      <div className="buttons">
-        <Row
-          updateDataObj={updateDataObj}
-          first="AC"
-          second="+/-"
-          third="%"
-          fourth="/"
-        />
-        <Row
-          updateDataObj={updateDataObj}
-          first="7"
-          second="8"
-          third="9"
-          fourth="*"
-        />
-        <Row
-          updateDataObj={updateDataObj}
-          first="4"
-          second="5"
-          third="6"
-          fourth="-"
-        />
-        <Row
-          updateDataObj={updateDataObj}
-          first="1"
-          second="2"
-          third="3"
-          fourth="+"
-        />
-        <Row
-          updateDataObj={updateDataObj}
-          first="0"
-          second="."
-          third="="
-        />
+  render() {
+    return (
+      <div className="calculator">
+        <h1 className="heading">Calculator( )</h1>by Nonhlanhla Mndebele
+        <input type="text" className="result-screen" value={0} readOnly />
+        <div className="buttons">
+          <Row
+            updateDataObj={this.updateDataObj}
+            first="AC"
+            second="+/-"
+            third="%"
+            fourth="/"
+          />
+          <Row
+            updateDataObj={this.updateDataObj}
+            first="7"
+            second="8"
+            third="9"
+            fourth="*"
+          />
+          <Row
+            updateDataObj={this.updateDataObj}
+            first="4"
+            second="5"
+            third="6"
+            fourth="-"
+          />
+          <Row
+            updateDataObj={this.updateDataObj}
+            first="1"
+            second="2"
+            third="3"
+            fourth="+"
+          />
+          <Row
+            updateDataObj={this.updateDataObj}
+            first="0"
+            second="."
+            third="="
+          />
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default Calculator;
