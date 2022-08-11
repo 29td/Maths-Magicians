@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Row from './RowCalcul';
 import '../css/Calc.css';
 
-export default function Calculator() {
+const Calculator = () => {
   const [dataObj, setDataObj] = useState({
     total: null,
     next: null,
@@ -85,3 +85,5 @@ export default function Calculator() {
     </div>
   );
 }
+
+export default Calculator;
