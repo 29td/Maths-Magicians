@@ -1,5 +1,7 @@
+
 import React, { useEffect, useState } from 'react';
 import calculate from './logic/calculator';
+import React from 'react';
 import Row from './RowCalcul';
 import '../css/Calc.css';
 
