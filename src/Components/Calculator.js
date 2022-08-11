@@ -51,7 +51,8 @@ class Calculator extends React.Component {
   render() {
     return (
       <div className="calculator">
-        <h1 className="heading">Calculator( )</h1>by Nonhlanhla Mndebele
+        <h1 className="heading">Calculator( )</h1>
+        by Nonhlanhla Mndebele
         <input type="text" className="result-screen" value={0} readOnly />
         <div className="buttons">
           <Row
