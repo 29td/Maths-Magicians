@@ -1,6 +1,6 @@
 import React from 'react';
-import calculate from './logic/calculator';
 import Row from './RowCalcul';
+import calculate from './logic/calculator';
 import '../css/Calc.css';
 
 class Calculator extends React.Component {
