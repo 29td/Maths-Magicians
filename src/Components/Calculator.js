@@ -1,7 +1,6 @@
-/* eslint-disable react/jsx-no-bind */
-/* eslint-disable  react/prefer-stateless-function */
 import React, { useEffect, useState } from 'react';
 import Row from './RowCalcul';
+import '../css/Calc.css';
 
 export default function Calculator() {
   const [dataObj, setDataObj] = useState({
@@ -10,9 +9,13 @@ export default function Calculator() {
     operation: null,
   });
 
-  function updateDataObj(event) {
-    const value = event.target.textContent;
-    setDataObj((prevDataObj) => calculate(prevDataObj, value));
+  class updateDataObj extends React.PureComponent {
+    render(event) {
+      const {
+        value = event.target.textContent,
+      } = setDataObj((prevDataObj) => Calculator(prevDataObj, value));
+      return (setDataObj((prevDataObj) => Calculator(prevDataObj, value)));
+    }
   }
 
   function updateScreen() {
@@ -41,7 +44,7 @@ export default function Calculator() {
 
   return (
     <div className="calculator">
-      <h1 className="heading">Calc( )</h1>
+      <h1 className="heading">Calculator( )</h1>
       <input type="text" className="result-screen" value={0} readOnly />
       <div className="buttons">
         <Row
