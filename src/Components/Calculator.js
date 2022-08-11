@@ -9,13 +9,9 @@ const Calculator = () => {
     operation: null,
   });
 
-  class updateDataObj extends React.PureComponent {
-    render(event) {
-      const {
-        value = event.target.textContent,
-      } = setDataObj((prevDataObj) => Calculator(prevDataObj, value));
-      return (setDataObj((prevDataObj) => Calculator(prevDataObj, value)));
-    }
+  function updateDataObj(event) {
+    const value = event.target.textContent;
+    setDataObj((prevDataObj) => Calculator(prevDataObj, value));
   }
 
   function updateScreen() {
