@@ -3,7 +3,7 @@ import Row from './RowCalcul';
 import calculate from './logic/calculator';
 import '../css/Calc.css';
 
-export const Calculator = () => {
+const Calculator = () => {
   const [dataObj, setDataObj] = useState({
     total: null,
     next: null,
@@ -36,7 +36,7 @@ export const Calculator = () => {
     }
   }
 
-updateScreen();
+  updateScreen();
 
   return (
     <div className="calculator">
@@ -81,6 +81,6 @@ updateScreen();
       </div>
     </div>
   );
-}
+};
 
 export default Calculator;
