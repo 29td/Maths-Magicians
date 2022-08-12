@@ -1,18 +1,20 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-class Row extends React.Component {
+class Row extends React.PureComponent {
   render() {
     const {
-      first, second, third, fourth,
+      first, second, third, fourth, updateDataObj,
     } = this.props;
 
     return (
       <div className="row">
-        <button type="button">{first}</button>
-        <button type="button">{second}</button>
-        <button type="button">{third}</button>
-        { fourth ? <button type="button">{fourth}</button> : null}
+        <button onClick={updateDataObj} type="button">{first}</button>
+        <button onClick={updateDataObj} type="button">{second}</button>
+        <button onClick={updateDataObj} type="button">{third}</button>
+        { fourth ? <button onClick={updateDataObj} type="button">{fourth}</button> : null}
+        {' '}
+
       </div>
     );
   }
@@ -27,6 +29,7 @@ Row.propTypes = {
   second: PropTypes.string.isRequired,
   third: PropTypes.string.isRequired,
   fourth: PropTypes.string,
+  updateDataObj: PropTypes.func.isRequired,
 };
 
 export default Row;
