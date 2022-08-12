@@ -3,7 +3,7 @@ import Row from './RowCalcul';
 import calculate from './logic/calculator';
 import '../css/Calc.css';
 
-export default function Calculator() {
+export const Calculator = () => {
   const [dataObj, setDataObj] = useState({
     total: null,
     next: null,
@@ -15,18 +15,19 @@ export default function Calculator() {
     setDataObj((prevDataObj) => calculate(prevDataObj, value));
   }
 
+  let screen = '0';
+
   function updateScreen() {
-    const screen = document.querySelector('.result-screen');
     if (dataObj.next && !dataObj.total) {
-      screen.value = dataObj.next;
+      screen = dataObj.next;
     } else if (!dataObj.next && dataObj.total) {
-      screen.value = dataObj.operation
+      screen = dataObj.operation
         ? `${dataObj.total}  ${dataObj.operation}`
         : dataObj.total;
     } else if (!dataObj.total && !dataObj.next) {
-      screen.value = '';
+      screen = '0';
     } else {
-      screen.value = `
+      screen = `
         ${dataObj.total} ${
   dataObj.operation
     ? `${dataObj.operation} ${dataObj.next}`
@@ -35,15 +36,13 @@ export default function Calculator() {
     }
   }
 
-  useEffect(() => {
-    updateScreen();
-  }, [dataObj]);
+updateScreen();
 
   return (
     <div className="calculator">
       <h1 className="heading">Calculator( )</h1>
       by Nonhlanhla Mndebele
-      <input type="text" className="result-screen" value={0} readOnly />
+      <input type="text" className="result-screen" value={screen} readOnly />
       <div className="buttons">
         <Row
           updateDataObj={updateDataObj}
@@ -83,3 +82,5 @@ export default function Calculator() {
     </div>
   );
 }
+
+export default Calculator;
