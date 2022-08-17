@@ -18,6 +18,10 @@ Copy the **https** or **SSH** address on the code
 Clone the repository using your favorite code editor.
 Once you've open the repo on your VScode run it using index.html on src folder.
 
+### Heroku cli 
+below is the link which explains how to install the heroku cli:
+https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli
+
 ## Author
 
 👤 **Reginah Nonhlanhla**
