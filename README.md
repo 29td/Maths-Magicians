@@ -25,6 +25,11 @@ Once you've open the repo on your VScode run it using index.html on src folder.
 - GitHub: [@Nonhlanhla](https://https://github.com/29td)
 - Twitter: [@NonhlanhlaMnde6](https://twitter.com/NonhlanhlaMnde6)
 
+👤 **Mark otuya**
+
+- GitHub: [@markotuya0](https://github.com/markotuya0)
+- Twitter: [@markotuya0](https://twitter.com/markotuya0)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
