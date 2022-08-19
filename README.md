@@ -30,6 +30,11 @@ Once you've open the repo on your VScode run it using index.html on src folder.
 - GitHub: [@markotuya0](https://github.com/markotuya0)
 - Twitter: [@markotuya0](https://twitter.com/markotuya0)
 
+👤 **Hamayoun Ali Babur **
+
+- GitHub: [@Hamayounali](https://github.com/Hamayounali)
+- Twitter: [@hamayounAli6](https://twitter.com/hamayounAli6)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
